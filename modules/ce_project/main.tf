@@ -1,6 +1,6 @@
 provider "shell" {
   sensitive_environment = {
-    IBM_API_KEY = var.ibmcloud_api_key
+    IBM_CLOUD_API_KEY = var.ibmcloud_api_key
   }
   interpreter        = ["/bin/bash", "-c"]
   enable_parallelism = false

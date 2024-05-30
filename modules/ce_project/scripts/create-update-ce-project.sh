@@ -4,13 +4,10 @@
 # 5725-S00 (C) Copyright IBM Corp. 2024. All Rights Reserved.
 # US Government Users Restricted Rights - Use, duplication or
 # disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
-echo "1111" > /tmp/sasa.log
 SCRIPT_DIR=$(realpath "$(dirname "$0")")
 TMP_DIR="/tmp"
 LOG_FILE="${TMP_DIR}/hpcaas-check-reservation.log"
 CODE_ENGINE_PROJECT_GUID=""
-
-#exec 111>&1 >&2 # use fd 111 later to emit json, other output goes to stderr
 
 LOG_OUTPUT=$(${SCRIPT_DIR}/check_reservation.sh --region "${REGION}" --resource-group-id "${RESOURCE_GROUP_ID}" --output "${LOG_FILE}" 2>&1)
 RETURN_CODE=$?
